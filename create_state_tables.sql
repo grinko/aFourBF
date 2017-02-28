@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS ${VAR:env}_state;
+
+USE ${VAR:env}_state;
+DROP TABLE IF EXISTS updates;
+CREATE TABLE IF NOT EXISTS updates
+(
+	id INT,
+	uid STRING,
+	title	STRING,
+	updatetime TIMESTAMP,
+	author STRING
+)
+STORED AS TEXTFILE;
